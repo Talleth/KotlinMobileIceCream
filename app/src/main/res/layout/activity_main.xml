@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/the_works_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="handleTheWorks"
+        android:text="@string/the_works"
+        app:layout_constraintBaseline_toBaselineOf="@+id/reset_button"
+        app:layout_constraintEnd_toStartOf="@+id/reset_button"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="handleReset"
+        android:text="@string/reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/order_button"
+        app:layout_constraintStart_toEndOf="@+id/the_works_button" />
+
+    <Button
+        android:id="@+id/order_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="handleOrder"
+        android:text="@string/order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reset_button" />
+
+    <SeekBar
+        android:id="@+id/hot_fudge_seekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="3"
+        android:progress="1"
+        app:layout_constraintEnd_toStartOf="@+id/hot_fudge_amount_textView"
+        app:layout_constraintStart_toEndOf="@+id/hot_fudge_textView"
+        app:layout_constraintTop_toTopOf="@+id/hot_fudge_textView" />
+
+    <TextView
+        android:id="@+id/hot_fudge_amount_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="2dp"
+        android:text="@string/hot_fudge_amount"
+        app:layout_constraintBottom_toBottomOf="@+id/hot_fudge_seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/hot_fudge_seekBar" />
+
+    <TextView
+        android:id="@+id/hot_fudge_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="122dp"
+        android:text="@string/hot_fudge"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hot_fudge_seekBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ice_cream_sundae_maker"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:typeface="normal"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/left_linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="22dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/right_linearLayout"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/right_linearLayout">
+
+        <CheckBox
+            android:id="@+id/peanuts_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/peanuts" />
+
+        <CheckBox
+            android:id="@+id/almonds_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/almonds"
+            tools:layout_editor_absoluteX="-129dp"
+            tools:layout_editor_absoluteY="427dp" />
+
+        <CheckBox
+            android:id="@+id/strawberries_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/strawberries" />
+
+        <CheckBox
+            android:id="@+id/gummy_bears_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/gummy_bears"
+            tools:layout_editor_absoluteX="-129dp"
+            tools:layout_editor_absoluteY="523dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left_linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/size_spinner">
+
+        <CheckBox
+            android:id="@+id/m_and_m_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/m_m_s" />
+
+        <CheckBox
+            android:id="@+id/brownies_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/brownies" />
+
+        <CheckBox
+            android:id="@+id/oreos_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/oreos" />
+
+        <CheckBox
+            android:id="@+id/marshmallows_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleChecked"
+            android:text="@string/marshmallows" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/amount_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="163dp"
+        android:text="@string/defaultAmount"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/title_textView" />
+
+    <Spinner
+        android:id="@+id/size_spinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="94dp"
+        android:entries="@array/size_array"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/size_textView"
+        app:layout_constraintTop_toBottomOf="@+id/flavor_spinner" />
+
+    <TextView
+        android:id="@+id/size_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginEnd="23dp"
+        android:text="@string/size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/size_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/size_spinner"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/flavor_spinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="94dp"
+        android:entries="@array/flavor_array"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icecream_textView"
+        app:layout_constraintTop_toBottomOf="@+id/amount_textView" />
+
+    <TextView
+        android:id="@+id/icecream_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="23dp"
+        android:text="@string/ice_cream"
+        app:layout_constraintEnd_toStartOf="@+id/flavor_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="94dp"
+        android:contentDescription="@string/sundae_description"
+        app:layout_constraintBottom_toBottomOf="@+id/size_textView"
+        app:layout_constraintEnd_toStartOf="@+id/amount_textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sundae" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
